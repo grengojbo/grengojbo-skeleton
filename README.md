@@ -22,7 +22,7 @@ git add -A
 git commit -m "first commit"
 ```
 
-Публикуем на [github](https://github.com) если нужно приватный репозитарий то бесплатно можно создать на [bitbucket](https://bitbucket.org)
+Публикуем на [github](https://github.com) если нужно приватный репозитарий то бесплатно можно создать на [bitbucket](https://bitbucket.org).
 
 ```
 git remote add origin git@github.com:grengojbo/example-site.git
@@ -42,7 +42,7 @@ git merge skeleton/master
 
 ## Работа с вашей копией проекта
 
-Заменяем *grengojbo-skeleton* на твя вашего проекта -> *example-site* в файлах [package.json](./package.json) [bower.json](./bower.json). Редактируем описание вашего проекта в файде [package.json](./package.json).
+Заменяем *grengojbo-skeleton* на имя вашего проекта -> *example-site* в файлах [package.json](./package.json) [bower.json](./bower.json). Редактируем описание вашего проекта в файде [package.json](./package.json).
 
 Это приложение показывает только "Hello, world!".
 
@@ -80,7 +80,26 @@ gulp
 ...
 ```
 
-При этом [откроется](http://localhost:3000) страничка в броузере, а если открыть *External URL* ```http://192.168.1.129:3000``` в броузерах на других компьютерах. Изменените scss, html, js файл и смотрите результат на всех гаджетах (при настройке tunnel, xio) даже заказчик с может смотреть изменения в реальном времени.
+При этом [откроется](http://localhost:3000) страничка в броузере, а если открыть *External URL* ```http://192.168.1.129:3000``` в броузерах на других компьютерах то изменените scss, html, js файл и можно в реальном времент смотрить результат на всех гаджетах (при настройке tunnel, xio) даже заказчик с может смотреть.
+
+Получить последние изменения из [grengojbo-skeleton](https://github.com/grengojbo/grengojbo-skeleton)
+
+```
+git fetch skeleton
+```
+
+Посмотреть что изменилось
+
+```
+git diff skeleton/master
+```
+
+Применить изменения
+
+```
+git merge skeleton/master
+```
+
 
 Then to start in `debug` mode without script minification and with file watch:
 
