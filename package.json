@@ -1,0 +1,76 @@
+{
+  "name": "passage-site",
+  "version": "0.0.1",
+  "description": "PASSAGE Mall site",
+  "main": "./server.js",
+  "browser": {
+    "./config/environment.js": "./config/browser.js"
+  },
+  "author": "Oleg Dolya",
+  "email": "oleg.dolya@gmail.com",
+  "url": "http://passage-mall.com.ua",
+  "homepage": "https://bitbucket.org/passage-mall/passage-site/",
+  "bugs": "https://bitbucket.org/passage-mall/passage-site/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:passage-mall/passage-site.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "catberry": "^3.0.0",
+    "catberry-l10n": "^2.1.1",
+    "catberry-lazy-loader": "^2.0.6",
+    "connect": "^3.0.0",
+    "errorhandler": "^1.0.0",
+    "serve-static": "^1.0.0"
+  },
+  "engines": {
+    "node": "^0.10.26"
+  },
+  "scripts": {
+    "start": "npm run release",
+    "release": "node ./build.js release && node ./server.js release",
+    "debug": "node ./build.js & node ./server.js",
+    "debug-win": "start /B node ./build.js && start /B node ./server.js"
+  },
+  "devDependencies": {
+    "browser-sync": "^1.6.5",
+    "del": "^0.1.3",
+    "gulp": "^3.8.10",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-changed": "^1.0.0",
+    "gulp-concat": "^2.4.1",
+    "gulp-csso": "^0.2.9",
+    "gulp-file-include": "^0.5.1",
+    "gulp-header": "^1.2.2",
+    "gulp-html2js": "^0.2.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^1.2.1",
+    "gulp-jshint": "^1.9.0",
+    "gulp-load-plugins": "^0.7.1",
+    "gulp-minify-html": "^0.1.6",
+    "gulp-ng-annotate": "^0.3.5",
+    "gulp-ng-html2js": "^0.1.8",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-protractor": "0.0.11",
+    "gulp-rename": "^1.2.0",
+    "gulp-rev": "^2.0.1",
+    "gulp-rev-replace": "^0.3.1",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-size": "^1.1.0",
+    "gulp-sourcemaps": "^1.2.8",
+    "gulp-uglify": "^1.0.1",
+    "gulp-useref": "^1.0.2",
+    "gulp-util": "^3.0.1",
+    "jshint-stylish": "^1.0.0",
+    "karma": "^0.12.24",
+    "karma-chrome-launcher": "^0.1.5",
+    "karma-coverage": "^0.2.6",
+    "karma-html-reporter": "^0.2.4",
+    "karma-jasmine": "^0.2.3",
+    "karma-mocha-reporter": "^0.3.1",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "lodash": "^2.4.1",
+    "run-sequence": "^1.0.1"
+  }
+}

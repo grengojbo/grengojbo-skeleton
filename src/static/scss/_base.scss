@@ -1,0 +1,190 @@
+//@import 'normalize';
+
+/* Fonts
+   ========================================================================== */
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
+@include font-face("Open Sans", "Open Sans", "OpenSans", "opensans-regular", "normal", "normal");
+// @include font-face("Open Sans", "Open Sans Italic", "OpenSans-Italic", "opensans-italic", "normal", "italic");
+
+@include font-face("OpenSansCondensed", "Open Sans Cond Light", "OpenSans-CondensedLight", "open_sans_condensed_light", 300, "normal");
+@include font-face("OpenSansCondensedBold", "Open Sans Condensed Bold", "OpenSans-CondensedBold", "opensans-condbold", 700, "normal");
+@include font-face("OpenSansCondensedItalic", "Open Sans Cond Light Italic", "OpenSans-CondensedLightItalic", "opensans-condlightitalic", 300, "italic");
+
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] {
+  font-family: 'Open Sans', $default-fonts;
+
+}
+
+// font-family: 'Open Sans Condensed';
+// @import "http://webfonts.ru/import/osans.css";
+/* Defaults
+   ========================================================================== */
+
+html {
+  @include font-size($base-root-size);
+  line-height: 1.5;
+  background: $color-bg;
+  display: flex;
+  min-height: 100%;
+  height:auto !important;
+  height: 100%;
+  flex-direction: column;
+}
+
+body {
+  // background: $fuchsia;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: auto;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+}
+
+header {
+  background: $white;
+  width: 100%;
+  z-index: 2;
+  // max-width: $max-width;
+  min-width: 430px;
+  margin: 0 auto 0;
+  padding: 0 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.main {
+  // background: $orange;
+  width: 100%;
+  // max-width: $max-width;
+  min-width: 430px;
+  margin: auto;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+footer {
+    background: $color-footer;
+    width: 100%;
+    // max-width: $max-width;
+    // min-width: $min-width;
+    color: $silver;
+    margin: auto;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+::-moz-selection {
+
+  @include selection();
+}
+::selection {
+
+  @include selection();
+}
+::-webkit-input-placeholder {
+
+  @include placeholder();
+}
+::-moz-placeholder {
+
+  @include placeholder();
+}
+:-ms-input-placeholder {
+  @include placeholder();
+
+}
+img.pure-img {
+  vertical-align: middle;
+  max-width: 60%;
+  display: inline;
+
+}
+code {
+  color: $red;
+
+}
+h2 {
+  @include font('OpenSansCondensed') {
+    font-size: 200%;
+  };
+}
+h3 {
+  font-weight: normal;
+  @include font-size(22);
+
+}
+.pure-menu.pure-menu-horizontal {
+  background: $white;
+
+}
+.pure-menu {
+  font-size: 90%;
+  .pure-menu-heading {
+    margin-top: 2px;
+    border: 0;
+  }
+}
+a {
+  color: $blue;
+  text-decoration: none;
+  line-height: inherit;
+  &:focus,
+  &:hover {
+    color: darken($blue, 9);
+  }
+}
+a.pure-button:focus,
+a.pure-button:hover {
+  color: #fff;
+}
+pre {
+  code {
+    color: $black;
+    background-color: $silver;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $gray;
+    display: block;
+    padding: 0.5em;
+  }
+
+}
+h4 {
+  @include font-size(21);
+}
+// p {
+//   @include font('OpenSansCondensed') { font-size: 500%};
+// }
+.bg-blue {
+  background: $colors-blue;
+  color: $white;
+}
+.bg-ligh-blue {
+  background: $colors-ligh-blue;
+  color: $white;
+}
+.bg-red {
+  background: $colors-red;
+  color: $white;
+}
+
+// Loading
+.loading{
+    min-height: 36px;
+    min-width: 36px;
+    background: url('../images/loader.svg') no-repeat center;
+}

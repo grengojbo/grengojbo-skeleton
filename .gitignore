@@ -1,0 +1,27 @@
+# general
+*.orig
+.idea
+.DS_Store
+*~
+.sass-cache
+*.sublime-project
+*.db
+*.sqlite
+temp/
+
+# package control
+node_modules
+src/static/vendor
+
+# logs
+*.log
+npm-debug.log
+
+# build
+build/tmp
+build/dist
+src/tmp/
+public/tmp/
+src/index.html
+example/
+public/bundle.js

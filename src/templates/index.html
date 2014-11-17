@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<!--This is reference to placeholder 'head' of module 'main'-->
+<head lang="en" id="main_head">
+  @@include('main/placeholders/head.dust')
+</head>
+<body>
+  <header class="pure-menu">
+    <a href="/" class="pure-menu-heading"><i class="fa fa-puzzle-piece"></i> Your Logo</a>
+    <!--This is reference to placeholder 'navigation' of module 'pages'-->
+    <nav id="pages_navigation">
+      <a href="#" class="nav-item">Home</a>
+      <a href="#" class="nav-item active">Pricing</a>
+      <a href="#" class="nav-item">Contact</a>
+    </nav>
+  </header>
+  <!--This is reference to placeholder 'index' of module 'pages'-->
+  <div class="main" id="pages_index">
+  @@include('home.html')
+  </div>
+  <footer>
+    <div class="box">
+      <!-- http://l-lin.github.io/font-awesome-animation/ -->
+      <address>
+        Контакты&nbsp;&nbsp;<a href="mailto:matt@example.com" class="faa-parent animated-hover"><i class="fa fa-envelope faa-horizontal"></i>&nbsp;Oleg Dolya</a>
+      </address>
+      <div class="footer-social">
+        <a class="soc-itm pure-button bg-blue faa-parent animated-hover" href="#"><i class="fa fa-facebook fa-lg faa-tada"></i>&nbsp; Facebook</a>
+        <a class="soc-itm pure-button bg-ligh-blue faa-parent animated-hover" href="#"><i class="fa fa-twitter fa-lg faa-tada"></i>&nbsp;  Twitter</a>
+        <a class="soc-itm pure-button bg-red faa-parent animated-hover" href="#"><i class="fa fa-youtube fa-lg faa-tada"></i>&nbsp; YouTube</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
