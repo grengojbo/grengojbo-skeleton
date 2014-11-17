@@ -1,12 +1,41 @@
-#Catberry Empty Project
+#  Новый проект
 
-![Catberry](https://raw.githubusercontent.com/catberry/catberry/master/docs/images/logo.png)
+Создаем проект с [git](http://git-scm.com/downloads).
+
+```
+mkdir example-site
+cd  example-site
+git init
+echo "0.0.1" > VERSION
+git add -A
+git commit -m "first commit"
+```
+
+Публикуем на [github](https://github.com) если нужно приватный репозитарий то бесплатно можно создать на [bitbucket](https://bitbucket.org)
+
+```
+git remote add origin git@github.com:grengojbo/example-site.git
+или приватный
+git remote add origin git@bitbucket.org:passage-mall/passage-site.git
+
+git push -u origin master
+```
+
+Делаем форк шаблона приложения, для удобства я использую [github/hub](https://github.com/github/hub).
+
+```
+git remote add skeleton grengojbo/grengojbo-skeleton
+```
+
+Заменяем *grengojbo-skeleton* на твя вашего проекта -> *example-site* в файлах [package.json](./package.json) [bower.json](./bower.json). Редактируем описание вашего проекта в файде [package.json](./package.json).
 
 ## Getting started Developer
 
-Install **node.js**. Then **sass**, **gulp** and **bower** if you haven't yet.
+Install **git** **hub** **node.js**. Then **sass**, **gulp** and **bower** if you haven't yet.
 
 ```
+sudo brew install --HEAD hub
+
 $ gem install sass
 $ sudo npm -g install gulp bower
 ```
