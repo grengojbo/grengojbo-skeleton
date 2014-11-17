@@ -1,6 +1,17 @@
 #  Новый проект
 
-Создаем проект с [git](http://git-scm.com/downloads).
+## Приступая к работе для разработчика
+
+Необходимо установить [git](http://git-scm.com/downloads) [github/hub](https://github.com/github/hub) **node.js**. Then **sass**, **gulp** and **bower** if you haven't yet.
+
+```
+sudo brew install --HEAD hub
+
+$ gem install sass
+$ sudo npm -g install gulp bower
+```
+
+Создаем проект с .
 
 ```
 mkdir example-site
@@ -24,38 +35,52 @@ git push -u origin master
 Делаем форк шаблона приложения, для удобства я использую [github/hub](https://github.com/github/hub).
 
 ```
-git remote add skeleton grengojbo/grengojbo-skeleton
+git remote add skeleton https://github.com/grengojbo/grengojbo-skeleton.git
+git fetch skeleton
+git merge skeleton/master
 ```
+
+## Работа с вашей копией проекта
 
 Заменяем *grengojbo-skeleton* на твя вашего проекта -> *example-site* в файлах [package.json](./package.json) [bower.json](./bower.json). Редактируем описание вашего проекта в файде [package.json](./package.json).
 
-## Getting started Developer
+Это приложение показывает только "Hello, world!".
 
-Install **git** **hub** **node.js**. Then **sass**, **gulp** and **bower** if you haven't yet.
-
-```
-sudo brew install --HEAD hub
-
-$ gem install sass
-$ sudo npm -g install gulp bower
-```
-
-##How to use
-
-This application only shows "Hello, world!" page.
-
-First of all it is needed to install dependencies:
+В первую очередь необходимо установить зависимости для разработчика:
 
 ```
-$ npm install
-$ bower install
+npm install
+bower install
 ```
 
-Разработка графического макета
+После этих нехитрых действий можно приступать к разработке графического макета. Что необходимо помнить:
+ - верстальщик работает с директорией **src**
+ - стили в **scss**
+ - сторонии JavaScript библиотеки в **vendor**
+ - изображения в **images**
+ - макеты страниц расположены в **templates**, шаблонизатор [dust](http://akdubya.github.io/dustjs/)
+ - содержимое тега **head** в [src/templates/main/placeholders/head.dust](./src/templates/main/placeholders/head.dust)
+
+ВАЖНО ПОМНИТЬ: верстальщик всегда рабоает с одним файлом [src/templates/index.html](./src/templates/index.html). Если ему необходимо сверстать страницу ленты новостей то он создает файл **/src/templates/news.html** и в файле [/src/templates/index.html](./src/templates/index.html) меняет: **@@include('home.html')** -> **@@include('news.html')**
+
+В терминале запустите задачу **gult** и работайте в вашем любимом редакторе например [SublimeText3](http://www.sublimetext.com/3).
 
 ```
-$ gulp
+gulp
+...
+20:39:39] Starting 'serve'...
+[20:39:42] Finished 'serve' after 2.51 s
+[20:39:42] Starting 'default'...
+[20:39:42] Finished 'default' after 13 μs
+[grengojbo-skeleton] Local URL: http://localhost:3000
+[grengojbo-skeleton] External URL: http://192.168.1.129:3000
+[grengojbo-skeleton] Serving files from: public/tmp
+[grengojbo-skeleton] Serving files from: src
+[grengojbo-skeleton] Serving files from: public
+...
 ```
+
+При этом [откроется](http://localhost:3000) страничка в броузере, а если открыть *External URL* ```http://192.168.1.129:3000``` в броузерах на других компьютерах. Изменените scss, html, js файл и смотрите результат на всех гаджетах (при настройке tunnel, xio) даже заказчик с может смотреть изменения в реальном времени.
 
 Then to start in `debug` mode without script minification and with file watch:
 
