@@ -1,4 +1,4 @@
-NAME="apassage"
+NAME="example"
 PUBLIC_PORT=3000
 PORT=${PUBLIC_PORT}
 IMAGE_NAME = "grengojbo/${NAME}"

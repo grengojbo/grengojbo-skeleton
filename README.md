@@ -84,6 +84,8 @@ gulp
 
 Подключение к рабочему процессу програмиста, меняем заглушки на API.
 
+Публикация проекта на [heroku](https://www.heroku.com/) или приватном на основе [deis](deis.io) непример [uatv.me](http://deis.uatv.me/). Для Linux или MacOS X [Makefile](./Makefile) в комплекте. Меняем в [Makefile](./Makefile) 
+
 ## Памятка
 
 Получить последние изменения из [grengojbo-skeleton](https://github.com/grengojbo/grengojbo-skeleton)
