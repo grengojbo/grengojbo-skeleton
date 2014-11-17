@@ -27,7 +27,7 @@ git commit -m "first commit"
 ```
 git remote add origin git@github.com:grengojbo/example-site.git
 или приватный
-git remote add origin git@bitbucket.org:passage-mall/passage-site.git
+git remote add origin git@bitbucket.org:grengojbo/example-site.git
 
 git push -u origin master
 ```
@@ -81,6 +81,10 @@ gulp
 ```
 
 При этом [откроется](http://localhost:3000) страничка в броузере, а если открыть *External URL* ```http://192.168.1.129:3000``` в броузерах на других компьютерах то изменените scss, html, js файл и можно в реальном времент смотрить результат на всех гаджетах (при настройке tunnel, xio) даже заказчик с может смотреть.
+
+Подключение к рабочему процессу програмиста, меняем заглушки на API.
+
+## Памятка
 
 Получить последние изменения из [grengojbo-skeleton](https://github.com/grengojbo/grengojbo-skeleton)
 
