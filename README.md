@@ -82,9 +82,16 @@ gulp
 
 При этом [откроется](http://localhost:3000) страничка в броузере, а если открыть *External URL* ```http://192.168.1.129:3000``` в броузерах на других компьютерах то изменените scss, html, js файл и можно в реальном времент смотрить результат на всех гаджетах (при настройке tunnel, xio) даже заказчик с может смотреть.
 
+Проверяем как будет работать на рабочем сервере
+
+```
+gulp server:dist
+```
+
 Подключение к рабочему процессу програмиста, меняем заглушки на API.
 
-Публикация проекта на [heroku](https://www.heroku.com/) или приватном на основе [deis](deis.io) непример [uatv.me](http://deis.uatv.me/). Для Linux или MacOS X [Makefile](./Makefile) в комплекте. Меняем в [Makefile](./Makefile) 
+Публикация проекта на [heroku](https://www.heroku.com/) или приватном на основе [deis](deis.io) непример [uatv.me](http://deis.uatv.me/). Для Linux или MacOS X [Makefile](./Makefile) в комплекте. Меняем в [Makefile](./Makefile)
+ 
 
 ## Памятка
 

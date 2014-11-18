@@ -4,7 +4,7 @@ PORT=${PUBLIC_PORT}
 IMAGE_NAME = "grengojbo/${NAME}"
 SITE="site.uatv.me"
 
-.PHONY: all run clean push create shell build destroy
+.PHONY: all run clean push create shell build destroy release
 
 all: push
 
@@ -35,3 +35,6 @@ install:
 
 destroy:
 	deis apps:destroy --app=${NAME} --confirm=${NAME}
+
+release:
+	@gulp dist:release
