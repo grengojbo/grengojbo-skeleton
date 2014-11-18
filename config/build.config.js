@@ -4,7 +4,7 @@
 module.exports = {
   port: 3000,
   // map: true, // Generate source maps
-  proxy: 'http://localhost:4000',
+  proxy: 'http://localhost:5000',
   tmp: 'public/tmp',
   dist: 'public',
   distTmp: 'build/dist',

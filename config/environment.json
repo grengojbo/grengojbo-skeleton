@@ -1,6 +1,6 @@
 {
 	"title": "Catberry Project",
 	"server": {
-		"port": 4000
+		"port": 5000
 	}
 }
