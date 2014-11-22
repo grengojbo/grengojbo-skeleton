@@ -18,3 +18,4 @@
   <!-- endbuild -->
 <!-- catberry -->
 <script src="/bundle.js"></script>
+<!--[if IE 9]><script src="https://static2.rocket-cdn.ru/javascripts/jquery.placeholder.js"></script><script type="text/javascript">$(function(){ $('input, textarea').placeholder(); });</script><![endif]-->
