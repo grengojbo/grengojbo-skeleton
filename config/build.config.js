@@ -9,6 +9,7 @@ module.exports = {
   dist: 'public',
   distTmp: 'build/dist',
   base: 'src',
+  assetsSrc: 'src/public/assets/**/*',
   tpl: 'src/**/*.tpl.html',
   mainScss: 'src/static/scss/main.scss',
   scss: 'src/static/scss/**/*.scss',
