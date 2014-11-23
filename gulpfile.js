@@ -26,7 +26,7 @@ var webdriverUpdate = require('gulp-protractor').webdriver_update;
 gulp.task('webdriver:update', webdriverUpdate);
 
 // optimize images and put them in the dist folder
-gulp.task('images', function() {
+gulp.task('images:old', function() {
   return gulp.src(config.base + config.images)
     .pipe($.imagemin({
       progressive: true,
@@ -34,18 +34,19 @@ gulp.task('images', function() {
     }))
     .pipe(gulp.dest(config.distTmp + '/static/images'))
     .pipe($.size({
-      title: 'images'
+      title: 'images:old'
     }));
 });
-gulp.task('images:dev', function() {
+gulp.task('images', function() {
   return gulp.src(config.base + config.images)
     .pipe($.imagemin({
       progressive: true,
       interlaced: true
     }))
     .pipe(gulp.dest(config.tmp + '/images'))
+    .pipe(gulp.dest(config.assets + '/images'))
     .pipe($.size({
-      title: 'images:dev'
+      title: 'images'
     }));
 });
 
@@ -73,18 +74,18 @@ gulp.task('build:release', function(cb) {
 
 //build files for creating a dist release
 gulp.task('build:dist', ['clean'], function(cb) {
-  runSequence(['copy', 'copy:assets', 'images:dev', 'sass', 'copy:fonts', 'images'], 'html', cb);
+  runSequence(['jshint', 'include:dust', 'copy', 'copy:assets', 'images', 'sass', 'copy:fonts'], 'html', cb);
 });
 
 //build files for development catberry
 gulp.task('build:cat', ['clean'], function(cb) {
-  runSequence(['copy:dust', 'copy', 'copy:assets', 'images:dev', 'sass'], cb);
+  runSequence(['include:dust', 'copy', 'copy:assets', 'images', 'sass'], cb);
 });
 
 //build files for development
 gulp.task('build', ['clean'], function(cb) {
   // runSequence(['sass', 'templates'], cb);
-  runSequence(['copy', 'copy:assets', 'images:dev', 'sass', 'include'], cb);
+  runSequence(['copy', 'copy:assets', 'images', 'sass', 'include'], cb);
 });
 
 gulp.task('include', function() {
@@ -96,6 +97,18 @@ gulp.task('include', function() {
     .pipe(gulp.dest(config.base + '/'))
     .pipe($.size({
       title: 'include'
+    }));
+});
+
+gulp.task('include:dust', function() {
+  gulp.src([config.templates + '/**/*.dust'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest(config.cat))
+    .pipe($.size({
+      title: 'include:dust'
     }));
 });
 
@@ -111,12 +124,12 @@ gulp.task('html', function() {
     }))
     .pipe(assets)
     .pipe($.if(config.map, $.sourcemaps.init()))
-    // .pipe($.if('**/*main.js', $.ngAnnotate()))
-    // .pipe($.if('*.js', $.uglify({
-      // mangle: false,
-    // })))
+    .pipe($.if('**/*main.js', $.ngAnnotate()))
+    .pipe($.if('**/*main.js', $.uglify({
+      mangle: false,
+    })))
     .pipe($.if('*.css', $.csso()))
-    .pipe($.if('**/*main.css', $.header(config.banner, {
+    .pipe($.if(['**/*main.js', '**/*main.css'], $.header(config.banner, {
       pkg: pkg
     })))
     .pipe($.rev())
@@ -284,8 +297,10 @@ gulp.task('server', ['build:cat'], function() {
     files: [config.base + '/static/**']
   });
 
-  gulp.watch(config.html, reload);
+  gulp.watch(config.html, ['include:dust', reload]);
   gulp.watch(config.scss, ['sass', reload]);
+  gulp.watch(config.js, ['copy', reload]);
+  gulp.watch(config.assets, reload);
 });
 
 gulp.task('server:dist', ['build:release'], function() {
@@ -307,12 +322,12 @@ gulp.task('serve', ['build'], function() {
 
   gulp.watch(config.html, ['include', reload]);
   gulp.watch(config.scss, ['sass', reload]);
-  gulp.watch(config.js, ['copy', reload]);
-  // gulp.watch(config.js, ['jshint', 'copy', reload]);
+  // gulp.watch(config.js, ['copy', reload]);
+  gulp.watch(config.js, ['jshint', 'copy', reload]);
   // gulp.watch(config.tpl, ['templates', reload]);
-  // gulp.watch(config.assets, reload);
+  gulp.watch(config.assets, reload);
 });
 
-gulp.task('dist', ['build:dist']);
-gulp.task('dist:release', ['build:release']);
+// gulp.task('dist', ['build:dist']);
+gulp.task('dist', ['build:release']);
 
