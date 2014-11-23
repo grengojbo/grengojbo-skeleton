@@ -73,19 +73,18 @@ gulp.task('build:release', function(cb) {
 
 //build files for creating a dist release
 gulp.task('build:dist', ['clean'], function(cb) {
-  runSequence(['copy:dev', 'copy:vendor', 'images:dev', 'sass', 'copy:assets', 'images'], 'html', cb);
-  // runSequence(['build', 'copy:assets'], 'html', cb);
+  runSequence(['copy', 'copy:assets', 'images:dev', 'sass', 'copy:fonts', 'images'], 'html', cb);
 });
 
 //build files for development catberry
 gulp.task('build:cat', ['clean'], function(cb) {
-  runSequence(['copy:dust', 'copy:dev', 'copy:vendor', 'images:dev', 'sass'], cb);
+  runSequence(['copy:dust', 'copy', 'copy:assets', 'images:dev', 'sass'], cb);
 });
 
 //build files for development
 gulp.task('build', ['clean'], function(cb) {
   // runSequence(['sass', 'templates'], cb);
-  runSequence(['copy:dev', 'copy:vendor', 'images:dev', 'sass', 'include'], cb);
+  runSequence(['copy', 'copy:assets', 'images:dev', 'sass', 'include'], cb);
 });
 
 gulp.task('include', function() {
@@ -185,7 +184,7 @@ gulp.task('copy:fonts', function() {
       // '!' + config.templates,
       // '!' + config.base + '/static/scss*',
       // '!' + config.base + '/static/vendor*'
-    ]).pipe(gulp.dest(config.distTmp + '/static/fonts'))
+    ]).pipe(gulp.dest(config.assets + '/fonts'))
     .pipe($.size({
       title: 'copy:assets'
     }));
@@ -194,13 +193,8 @@ gulp.task('copy:fonts', function() {
 //copy assets in dist folder
 gulp.task('copy:assets', function() {
   return gulp.src([
-      config.base + config.fonts,
-      config.base +  '/static/vendor/font-awesome/fonts/*'
-      // config.base + '/**/*',
-      // '!' + config.templates,
-      // '!' + config.base + '/static/scss*',
-      // '!' + config.base + '/static/vendor*'
-    ]).pipe(gulp.dest(config.distTmp + '/static/fonts'))
+      config.assetsSrc
+    ]).pipe(gulp.dest(config.assets))
     .pipe($.size({
       title: 'copy:assets'
     }));
@@ -250,11 +244,10 @@ gulp.task('copy:dev', function() {
 //copy assets in dist folder
 gulp.task('copy', function() {
   return gulp.src([
-      config.base + '/*',
-      '!' + config.base + '/*.html',
-      '!' + config.base + '/src',
-      '!' + config.base + '/test'
-    ]).pipe(gulp.dest(config.dist))
+      '!' + config.base + '/static/images/**',
+      '!' + config.base + '/static/scss/**',
+      config.base + '/static/**/*'
+    ]).pipe(gulp.dest(config.tmp))
     .pipe($.size({
       title: 'copy'
     }));
@@ -263,6 +256,18 @@ gulp.task('copy', function() {
 //clean temporary directories
 // gulp.task('clean', del.bind(null, [config.dist, config.tmp]));
 gulp.task('clean', del.bind(null, [config.index, config.tmp, 'build']));
+
+//lint files
+gulp.task('jshint', function() {
+  return gulp.src(config.js)
+    .pipe(reload({
+      stream: true,
+      once: true
+    }))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
 
 /* tasks supposed to be public */
 
@@ -300,9 +305,10 @@ gulp.task('serve', ['build'], function() {
     server: [config.tmp, config.base, 'public']
   });
 
-  gulp.watch(config.html, reload);
+  gulp.watch(config.html, ['include', reload]);
   gulp.watch(config.scss, ['sass', reload]);
-  // gulp.watch(config.js, ['jshint']);
+  gulp.watch(config.js, ['copy', reload]);
+  // gulp.watch(config.js, ['jshint', 'copy', reload]);
   // gulp.watch(config.tpl, ['templates', reload]);
   // gulp.watch(config.assets, reload);
 });
