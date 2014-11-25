@@ -4,6 +4,8 @@
 // This file contains definitions of rules how location URLs are translated
 // to "render" methods of catberry's modules.
 //
+// Этот файл содержит определения правил, как местонахождение URL переводятся "render" методы catberry модулей.
+//
 // Format:
 // /some/:parameter[module1,module2,module3]
 //
@@ -11,7 +13,7 @@
 // https://github.com/catberry/catberry/blob/master/docs/index.md#url-route-definition
 
 module.exports = [
+  // '/',
   '/:page[main, pages]',
   '/:page[main, pages]?query=:query[search]'
-  // '/'
 ];

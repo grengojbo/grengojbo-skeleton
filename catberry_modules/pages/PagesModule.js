@@ -15,6 +15,10 @@ function PagesModule() {
  * @returns {Promise<Object>|Object|undefined} Data context.
  */
 PagesModule.prototype.renderIndex = function () {
+  // console.log('page: ' + this.$context.state.page);
+  if (!this.$context.state.page) {
+    return {page: 'home'};
+  }
 	return {page: this.$context.state.page};
 };
 
@@ -25,10 +29,10 @@ PagesModule.prototype.renderIndex = function () {
  * @returns {Promise<Object>|Object|undefined} Data context.
  */
 PagesModule.prototype.renderNavigation = function () {
-	if (!this.$context.state.page) {
-		this.$context.redirect('/about');
-		return;
-	}
+	// if (!this.$context.state.page) {
+		// this.$context.redirect('/about');
+		// return;
+	// }
 	var data = {};
 	data[this.$context.state.page] = true;
 	return data;
