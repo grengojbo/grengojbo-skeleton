@@ -119,6 +119,12 @@ gulp server:dist
 
 Публикация проекта на [heroku](https://www.heroku.com/) или приватном на основе [deis](deis.io) непример [uatv.me](http://deis.uatv.me/). Для Linux или MacOS X [Makefile](./Makefile) в комплекте. Меняем в [Makefile](./Makefile)
  
+## Для програмиста
+
+модули Catberry:
+
+  - **main** основной шаблон страницы, а также отвечает за содержимое тега *head*
+  -  
 
 ## Памятка
 
