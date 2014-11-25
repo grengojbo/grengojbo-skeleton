@@ -82,9 +82,36 @@ gulp
 
 При этом [откроется](http://localhost:3000) страничка в броузере, а если открыть *External URL* ```http://192.168.1.129:3000``` в броузерах на других компьютерах то изменените scss, html, js файл и можно в реальном времент смотрить результат на всех гаджетах (при настройке tunnel, xio) даже заказчик с может смотреть.
 
+## Пишем ваш JS
+
+Меняем файлы в директории **src/templates**
+
+например вставляем на домашнюю страницу работу верстальщика в файле src/templates/main/placeholders/__index.dust*
+
+```html
+<!--This is reference to placeholder 'index' of module 'pages'-->
+<div class="main" id="pages_index">
+    @@include('../../home.html')
+</div>
+```
+
+В первом окне терминала запускаем web сервер в режиме отладки
+
+```
+$ npm run debug
+```
+
+Во втором
+
+```
+$ gulp server
+```
+
 Проверяем как будет работать на рабочем сервере
 
 ```
+gulp dist
+npm start
 gulp server:dist
 ```
 
@@ -92,6 +119,12 @@ gulp server:dist
 
 Публикация проекта на [heroku](https://www.heroku.com/) или приватном на основе [deis](deis.io) непример [uatv.me](http://deis.uatv.me/). Для Linux или MacOS X [Makefile](./Makefile) в комплекте. Меняем в [Makefile](./Makefile)
  
+## Для програмиста
+
+модули Catberry:
+
+  - **main** основной шаблон страницы, а также отвечает за содержимое тега *head*
+  -  
 
 ## Памятка
 
@@ -111,14 +144,6 @@ git diff skeleton/master
 
 ```
 git merge skeleton/master
-```
-
-
-Then to start in `debug` mode without script minification and with file watch:
-
-```
-$ npm run debug
-$ gulp server
 ```
 
 Подготовка релиза
