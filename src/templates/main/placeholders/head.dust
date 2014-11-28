@@ -21,4 +21,14 @@
 <!-- build:js static/js/main.js -->
 <script src="tmp/js/main.js"></script>
 <!-- endbuild -->
-<!--[if IE 9]><script src="https://static2.rocket-cdn.ru/javascripts/jquery.placeholder.js"></script><script type="text/javascript">$(function(){ $('input, textarea').placeholder(); });</script><![endif]-->
+<!--[if lte IE 9]>
+<style>
+  .main {
+    display: none !important;
+  }
+  .ie9 article, .ie9 aside, .ie9 nav {
+  display: block;
+}
+</style>
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->

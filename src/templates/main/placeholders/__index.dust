@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--[if IE 9]><html lang='ru' class='ie9 no-js'><![endif]--><!---[if (gt IE 9)|!(IE)]><!--><html class="no-js" lang="ru"><!--<![endif]-->
 <html>
 <!--This is reference to placeholder 'head' of module 'main'-->
 <head lang="en" id="main_head">
@@ -9,6 +9,11 @@
     <!--This is reference to placeholder 'navigation' of module 'pages'-->
     <nav id="pages_navigation"></nav>
   </header>
+  <section id="html_messages">
+  <!--[if lte IE 9]>
+    <div class="old_browsers"><p>Ваш браузер устарел и неподдерживается. Он не может адекватно отображать страницы сайта. Мы можем предложить обновить?</p><p><a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">Internet Explorer</a> | <a href="https://www.google.com/chrome/">Google Chrome</a> | <a href="http://www.mozilla.org/">Firefox</a></p></div>
+  <![endif]-->
+  </section>
   <!--This is reference to placeholder 'index' of module 'pages'-->
   <div class="main" id="pages_index">
     <section id="banner" class="banner">
