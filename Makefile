@@ -18,6 +18,8 @@ create:
 	deis create ${NAME}
 	deis domains:add ${SITE} -a ${NAME}
 	deis limits:set -m cmd=64M -a ${NAME}
+	deis tags:set cluster=yes -a ${NAME}
+	deis config:set NAME_APP=${NAME} -a ${NAME}
 
 run:
 	npm run debug
