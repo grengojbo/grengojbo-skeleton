@@ -188,3 +188,25 @@ h4 {
     min-width: 36px;
     background: url('../images/loader.svg') no-repeat center;
 }
+// For Editor
+.jbo-pr {
+  text-align: right;
+}
+.jbo-pl {
+  text-align: left;
+}
+.jbo-pj {
+  text-align: justify;
+}
+.img_left {
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    margin-top: 3px
+}
+.img_right {
+    margin-left: 14px;
+    margin-top: 3px;
+    margin-bottom: 14px;
+    float: right
+}
