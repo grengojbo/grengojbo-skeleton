@@ -20,6 +20,9 @@ create:
 	deis limits:set -m cmd=64M -a ${NAME}
 	deis tags:set cluster=yes -a ${NAME}
 	deis config:set NAME_APP=${NAME} -a ${NAME}
+	# deis config:set NEW_RELIC_LICENSE_KEY=<key> -a ${NAME}
+	# deis config:set NEW_RELIC_APP_NAME=${NAME} -a ${NAME}
+	# deis config:set NEW_RELIC_APDEX=<0.010>
 
 run:
 	npm run debug
