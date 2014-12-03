@@ -16,6 +16,7 @@ var _ = require('lodash');
 var autoprefixer = require('gulp-autoprefixer');
 var fileinclude = require('gulp-file-include');
 var rename = require("gulp-rename");
+var stripDebug = require('gulp-strip-debug');
 // var concat = require('gulp-concat');
 // var php2html = require("gulp-php2html");
 /* jshint camelcase:false*/
