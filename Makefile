@@ -3,6 +3,8 @@ PUBLIC_PORT=3000
 PORT=${PUBLIC_PORT}
 IMAGE_NAME = "grengojbo/${NAME}"
 SITE="site.uatv.me"
+NEW_RELIC_LICENSE_KEY=<your key>
+APP_RAM=64M
 
 .PHONY: all run clean push create shell build destroy release
 
@@ -17,12 +19,16 @@ clean:
 create:
 	deis create ${NAME}
 	deis domains:add ${SITE} -a ${NAME}
-	deis limits:set -m cmd=64M -a ${NAME}
+	deis domains:add www.${SITE} -a ${NAME}
+	deis limits:set -m cmd=${APP_RAM} -a ${NAME}
 	deis tags:set cluster=yes -a ${NAME}
 	deis config:set NAME_APP=${NAME} -a ${NAME}
-	# deis config:set NEW_RELIC_LICENSE_KEY=<key> -a ${NAME}
+	deis config:set NODE_ENV=production
+	# deis config:set NEW_RELIC_LICENSE_KEY=${NEW_RELIC_LICENSE_KEY} -a ${NAME}
 	# deis config:set NEW_RELIC_APP_NAME=${NAME} -a ${NAME}
-	# deis config:set NEW_RELIC_APDEX=<0.010>
+	# deis config:set NEW_RELIC_APDEX=0.5
+	# deis config:set NEW_RELIC_CONFIG_FILE=/app/newrelic.js -a ${NAME}
+	# deis config:set NEW_RELIC_BROWSER_MONITOR_ENABLE=true -a ${NAME}
 
 run:
 	npm run debug

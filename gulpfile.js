@@ -16,6 +16,7 @@ var _ = require('lodash');
 var autoprefixer = require('gulp-autoprefixer');
 var fileinclude = require('gulp-file-include');
 var rename = require("gulp-rename");
+var stripDebug = require('gulp-strip-debug');
 // var concat = require('gulp-concat');
 // var php2html = require("gulp-php2html");
 /* jshint camelcase:false*/
@@ -282,6 +283,17 @@ gulp.task('jshint', function() {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
+gulp.task('jshint:catberry', function() {
+  return gulp.src(config.catberry)
+    .pipe(reload({
+      stream: true,
+      once: true
+    }))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
+
 /* tasks supposed to be public */
 
 
@@ -299,7 +311,8 @@ gulp.task('server', ['build:cat'], function() {
 
   gulp.watch(config.html, ['include:dust', reload]);
   gulp.watch(config.scss, ['sass', reload]);
-  gulp.watch(config.js, ['copy', reload]);
+  gulp.watch(config.js, ['jshint', 'copy', reload]);
+  // gulp.watch(config.catberry, ['jshint:catberry', reload]);
   gulp.watch(config.assets, reload);
 });
 

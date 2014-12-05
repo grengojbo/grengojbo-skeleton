@@ -17,11 +17,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "catberry": "^3.0.0",
+    "catberry": "^3.2.0",
     "catberry-l10n": "^2.1.1",
     "catberry-lazy-loader": "^2.0.6",
     "connect": "^3.0.0",
     "errorhandler": "^1.0.0",
+    "moment": "^2.8.4",
     "newrelic": "^1.14.0",
     "serve-static": "^1.0.0"
   },
@@ -60,6 +61,7 @@
     "gulp-ruby-sass": "^0.7.1",
     "gulp-size": "^1.1.0",
     "gulp-sourcemaps": "^1.2.8",
+    "gulp-strip-debug": "^1.0.2",
     "gulp-uglify": "^1.0.1",
     "gulp-useref": "^1.0.2",
     "gulp-util": "^3.0.1",
