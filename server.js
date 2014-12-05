@@ -1,5 +1,7 @@
 'use strict';
 
+require('newrelic');
+
 var catberry = require('catberry'),
 	isRelease = process.argv.length === 3 ?
 		process.argv[2] === 'release' : undefined;
@@ -31,7 +33,7 @@ app.use(errorhandler());
 cat.API.on('ready', function () {
 	var logger = cat.locator.resolve('logger');
 	logger.info(util.format(READY_MESSAGE, config.server.port));
-	logger.info(">>>>>>>>>>>>>>>>publicPath:" + publicPath)
+	logger.info("START App >>> publicPath: " + publicPath)
 });
 
 http

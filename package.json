@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "catberry": "^3.0.0",
+    "catberry": "^3.2.0",
     "catberry-l10n": "^2.1.1",
     "catberry-lazy-loader": "^2.0.6",
     "connect": "^3.0.0",
