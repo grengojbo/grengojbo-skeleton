@@ -87,26 +87,6 @@ footer {
     box-sizing: border-box;
 }
 
-::-moz-selection {
-
-  @include selection();
-}
-::selection {
-
-  @include selection();
-}
-::-webkit-input-placeholder {
-
-  @include placeholder();
-}
-::-moz-placeholder {
-
-  @include placeholder();
-}
-:-ms-input-placeholder {
-  @include placeholder();
-
-}
 img.pure-img {
   vertical-align: middle;
   max-width: 60%;

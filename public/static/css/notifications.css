@@ -3,13 +3,14 @@
 .ns-box {
   position: fixed;
   background: rgba(42,45,50,0.85);
-  padding: 22px;
+  /*padding: 20px 20px 20px 10px;*/
   line-height: 1.4;
   z-index: 1000;
   pointer-events: none;
   color: rgba(250,251,255,0.95);
   font-size: 90%;
   font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+  /*display: flex;*/
 }
 
 .ns-box.ns-show {
@@ -22,10 +23,10 @@
   font-weight: 700;
 }
 
-.ns-box a:hover,
+/*.ns-box a:hover,
 .ns-box a:focus {
   opacity: 1;
-}
+}*/
 
 .ns-box p {
   margin: 0;
@@ -45,7 +46,8 @@
   overflow: hidden;
   text-indent: 100%;
   cursor: pointer;
-  -webkit-backface-visibility: hidden;
+  /*margin-right: 30px;*/
+  /*-webkit-backface-visibility: hidden;*/
   backface-visibility: hidden;
 }
 
@@ -128,6 +130,10 @@
   padding: 0 3.2em;
   font-size: 1.2em;
   display: inline-block;
+}
+
+.ns-effect-slidetop .ns-box-inner {
+  margin: 10px 10px 20px 10px;
 }
 
 .ns-effect-slidetop .ns-close::before,
