@@ -311,6 +311,7 @@ gulp.task('server', ['build:cat'], function() {
 
   gulp.watch(config.html, ['include:dust', reload]);
   gulp.watch(config.scss, ['sass', reload]);
+  gulp.watch(config.assetsSrc, ['copy:assets', reload]);
   gulp.watch(config.js, ['jshint', 'copy', reload]);
   // gulp.watch(config.catberry, ['jshint:catberry', reload]);
   gulp.watch(config.assets, reload);
@@ -335,6 +336,7 @@ gulp.task('serve', ['build'], function() {
 
   gulp.watch(config.html, ['include', reload]);
   gulp.watch(config.scss, ['sass', reload]);
+  gulp.watch(config.assetsSrc, ['copy:assets', reload]);
   // gulp.watch(config.js, ['copy', reload]);
   gulp.watch(config.js, ['jshint', 'copy', reload]);
   // gulp.watch(config.tpl, ['templates', reload]);
