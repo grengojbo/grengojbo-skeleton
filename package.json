@@ -1,6 +1,6 @@
 {
   "name": "grengojbo-skeleton",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Landing Page",
   "main": "./server.js",
   "browser": {
