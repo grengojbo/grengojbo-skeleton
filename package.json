@@ -17,13 +17,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "catberry": "^3.2.0",
+    "catberry": "^3.2.1",
     "catberry-l10n": "^2.1.1",
     "catberry-lazy-loader": "^2.0.6",
+    "catberry-uri": "^1.2.1",
     "connect": "^3.0.0",
     "errorhandler": "^1.0.0",
     "moment": "^2.8.4",
-    "newrelic": "^1.14.0",
+    "newrelic": "^1.14.2",
     "serve-static": "^1.0.0"
   },
   "engines": {
