@@ -7,8 +7,16 @@
 
   <link rel="icon" href="favicon.png" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="static/css/font-awesome-696200ac.css">
-
-  <link rel="stylesheet" href="static/css/main-ee01219c.css">
+  <!-- build:css static/css/font-awesome.css -->
+  <link rel="stylesheet" href="tmp/vendor/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="tmp/vendor/font-awesome-animation/dist/font-awesome-animation.css">
+  <!-- endbuild -->
+  <!-- build:css static/css/notifications.css -->
+  <link rel="stylesheet" href="/static/css/notifications.css">
+  <!-- endbuild -->
+  <!-- build:css static/css/main.css -->
+  <link rel="stylesheet" href="tmp/vendor/pure/pure.css" />
+  <link rel="stylesheet" href="tmp/css/main.css" />
+  <!-- endbuild -->
 <!-- catberry -->
 <script src="/bundle.js"></script>
