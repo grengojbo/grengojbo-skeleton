@@ -1,0 +1,18 @@
+<!-- <section class="modal--show" id="modal-text" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true"> -->
+
+    <div class="modal-inner">
+        <header id="modal-label"><!-- Header -->
+          Header
+        </header>
+        <div class="modal-content">
+          <!-- The modals content -->
+          modal content
+        </div>
+        <footer>
+        <!-- Footer -->
+        Footer
+        </footer>
+    </div>
+
+    <div class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">?</div>
+<!-- </section> -->
