@@ -1,6 +1,6 @@
 'use strict';
 
-require('newrelic');
+// require('newrelic');
 
 var catberry = require('catberry'),
 	isRelease = process.argv.length === 3 ?
