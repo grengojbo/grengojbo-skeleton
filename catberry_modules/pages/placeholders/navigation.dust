@@ -1,11 +1,3 @@
-<ul class="nav nav-tabs" role="tablist">
-    <li {?.about}class="active"{/.about}>
-		<a href="/about">About</a>
-	</li>
-    <li {?.commits}class="active"{/.commits}>
-		<a href="/commits">Commits</a>
-	</li>
-    <li {?.search}class="active"{/.search}>
-		<a href="/search">Search</a>
-	</li>
-</ul>
+<a href="#" class="nav-item {?.about}active{/.about}">Home</a>
+<a href="#" class="nav-item {?.commits}active{/.commits}">Pricing</a>
+<a href="#" class="nav-item {?.search}active{/.search}">Contact</a>
