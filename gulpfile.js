@@ -314,6 +314,7 @@ gulp.task('server', ['build:cat'], function() {
   gulp.watch(config.assetsSrc, ['copy:assets', reload]);
   gulp.watch(config.js, ['jshint', 'copy', reload]);
   // gulp.watch(config.catberry, ['jshint:catberry', reload]);
+  gulp.watch(config.catberry, reload);
   gulp.watch(config.assets, reload);
 });
 

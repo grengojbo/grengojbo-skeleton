@@ -15,77 +15,7 @@
   <![endif]-->
   </section>
   <!--This is reference to placeholder 'index' of module 'pages'-->
-  <div class="main" id="pages_index">
-    <section id="banner" class="banner">
-      <h1 class="banner-head">
-        Simple Pricing.<br>
-        Try before you buy. {.message}
-      </h1>
-    </section>
-    <section id="price" class="main-fixed">
-      <div class="grid">
-        <aside id="price_1" class="grid-itm-3 pricing-table-free">
-          <div class="box-base">
-            <h2>Personal</h2>
-            <span class="pricing-table-price">
-              $5 <span>per month</span>
-            </span>
-          </div>
-        </aside>
-        <aside id="price_2"  class="grid-itm-3 pricing-table-biz">
-          <div class="box-base">
-            <h2>Small Business</h2>
-            <span class="pricing-table-price">
-              $25 <span>per month</span>
-            </span>
-          </div>
-        </aside>
-        <aside id="price_3" class="grid-itm-3 pricing-table-enterprise">
-          <div class="box-base">
-            <h2>Enterprise</h2>
-            <span class="pricing-table-price">
-              $45 <span>per month</span>
-            </span>
-          </div>
-        </aside>
-      </div>
-    </section>
-    <section id="main" class="main-fixed">
-      <div class="grid">
-        <article id="article_1" class="grid-itm-2">
-          <!-- <div class="l-box-2"> -->
-            <h3 class="information-head">1 Get started today</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-            </p>
-          <!-- </div> -->
-        </article>
-        <article id="article_2" class="grid-itm-2">
-          <!-- <div class="l-box-2"> -->
-            <h3 class="information-head">2 Get started today</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-            </p>
-          <!-- </div> -->
-        </article>
-        <article id="article_3" class="grid-itm-2">
-          <!-- <div class="l-box-2"> -->
-            <h3 class="information-head">3 Get started today</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-            </p>
-          <!-- </div> -->
-        </article>
-        <article id="article_4" class="grid-itm-2">
-          <!-- <div class="l-box-2"> -->
-            <h3 class="information-head">4 Get started today</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-            </p>
-          <!-- </div> -->
-        </article>
-    </div>
-    </section>
+  <div class="main" id="pages_index"></section>
   </div>
   @@include('../../footer.html')
 </body>
