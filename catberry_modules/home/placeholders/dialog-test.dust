@@ -1,18 +1,22 @@
 <!-- <section class="modal--show" id="modal-text" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true"> -->
 
     <div class="modal-inner">
+        {?.header}
         <header id="modal-label"><!-- Header -->
           Header
         </header>
+        {/.header}
         <div class="modal-content">
           <!-- The modals content -->
-          modal content
+          modal content: {text}
         </div>
+        {?.footer}
         <footer>
         <!-- Footer -->
         Footer
         </footer>
+        {/.footer}
     </div>
 
-    <div class="modal-close" title="Close this modal" data-close="Close" data-dismiss="modal">?</div>
+    <div class="modal-close" title="Закрыть" data-close="Close" data-dismiss="modal">?</div>
 <!-- </section> -->

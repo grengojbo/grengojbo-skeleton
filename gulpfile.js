@@ -283,6 +283,17 @@ gulp.task('jshint', function() {
     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
+gulp.task('jshint:lib', function() {
+  return gulp.src(config.lib)
+    .pipe(reload({
+      stream: true,
+      once: true
+    }))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
+
 gulp.task('jshint:catberry', function() {
   return gulp.src(config.catberry)
     .pipe(reload({
@@ -314,6 +325,7 @@ gulp.task('server', ['build:cat'], function() {
   gulp.watch(config.assetsSrc, ['copy:assets', reload]);
   gulp.watch(config.js, ['jshint', 'copy', reload]);
   // gulp.watch(config.catberry, ['jshint:catberry', reload]);
+  gulp.watch(config.lib, ['jshint:lib', reload]);
   gulp.watch(config.catberry, reload);
   gulp.watch(config.assets, reload);
 });

@@ -18,7 +18,8 @@ module.exports = {
   cat: 'catberry_modules',
   templates: 'src/templates',
   vendor: 'src/static/vendor/**',
-  catberry: ['catberry_modules/**/*.js', 'lib/**/*.js'],
+  catberry: 'catberry_modules/**/*.js',
+  lib: 'lib/**/*.js',
   js: [
     'src/static/**/*.js',
     '!src/static/vendor/**/*.js'

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="tmp/css/main.css" />
   <!-- endbuild -->
   <!-- build:css static/css/vendor.css -->
-  <link rel="stylesheet" href="tmp/vendor/css-modal/build/modal.css">
+  <!-- <link rel="stylesheet" href="tmp/vendor/css-modal/build/modal.css"> -->
   <link rel="stylesheet" href="static/css/animate.min.css">
   <!-- endbuild -->
   <!-- build:css static/css/font-awesome.css -->
