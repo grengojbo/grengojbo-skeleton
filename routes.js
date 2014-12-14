@@ -14,6 +14,7 @@
 
 module.exports = [
   // '/',
+  // {expression:'/user/registration/', map: function('registration')},
   '/:page[main, pages]',
   '/:page[main, pages]?query=:query[search]'
 ];

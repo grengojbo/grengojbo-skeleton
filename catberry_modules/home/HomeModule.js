@@ -9,8 +9,9 @@ module.exports = HomeModule;
  */
 function HomeModule($serviceLocator) {
 	if (this.$context.isBrowser) {
-    this.modal=$serviceLocator.resolve('modal');
-    this.modal.isShowBg = true;
+    this.modal = $serviceLocator.resolve('modal');
+    this.modal.isShowBg = false;
+    this.modal.isFocus = false;
   }
 };
 
@@ -39,5 +40,5 @@ HomeModule.prototype.afterRenderIndex = function () {
     text: 'Hello word :-)',
     footer: true
   };
-  this.modal.show(this.$context.name,'dialog-test', data);
+  // this.modal.show(this.$context.name,'dialog-test', data);
 };

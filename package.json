@@ -20,6 +20,7 @@
     "catberry": "^3.2.1",
     "catberry-l10n": "^2.1.1",
     "catberry-lazy-loader": "^2.0.6",
+    "catberry-oauth2-client": "^1.1.0",
     "catberry-uri": "^1.2.1",
     "connect": "^3.0.0",
     "errorhandler": "^1.0.0",
