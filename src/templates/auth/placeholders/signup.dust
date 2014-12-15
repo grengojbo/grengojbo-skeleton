@@ -14,11 +14,11 @@
           </div>
           <div class="field">
             <label>Пароль</label>
-            <input type="password" name="password" class="form-control">
+            <input type="password" name="password">
           </div>
           <div class="field">
             <label>Пароль еще раз</label>
-            <input type="password" name="password-confirmation" class="form-control">
+            <input type="password" name="password-confirmation">
           </div>
           <div class="inline field">
             <div class="ui checkbox">
