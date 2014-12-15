@@ -7,9 +7,11 @@
 
   <link rel="icon" href="favicon.png" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="/tmp/vendor/semantic-ui-form/form.css"> -->
    <!-- build:css static/css/main.css -->
-  <link rel="stylesheet" href="/tmp/vendor/semantic-ui-form/form.css">
+  <link rel="stylesheet" href="/static/css/form.css">
   <link rel="stylesheet" href="/tmp/vendor/pure/pure.css" />
+  <link rel="stylesheet" href="/static/css/button.css">
   <link rel="stylesheet" href="/tmp/css/main.css" />
   <!-- endbuild -->
   <!-- build:css static/css/vendor.css -->
