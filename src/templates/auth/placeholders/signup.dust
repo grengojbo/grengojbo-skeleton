@@ -1,17 +1,16 @@
 <div class="modal-inner">
         <header id="modal-label"><!-- Header -->
-          Header
+          Регистрация
         </header>
-        <div class="modal-content">
-          <form class="pure-form" name="signup" data-module="auth">
-          <div class="form-group">
+      <div class="modal-content">
+        <form class="ui error form segment js-sign-up-form" name="signup" data-cssmodal-stretch="true" data-module="auth">
+          <div class="field">
             <label>Отображаемое имя</label>
-            <input type="text" class="form-control" placeholder="Введите ваше имя" name="name" value="{.name}"/>
+            <input type="text" placeholder="Введите ваше имя" name="name" value="{.name}"/>
           </div>
-          <div class="form-group">
+          <div class="field">
             <label>Почта</label>
-              <input type="email" name="email" class="form-control" placeholder="example@example.com">
-            </div>
+              <input type="email" name="email" placeholder="example@example.com">
           </div>
           <div class="form-group">
             <label>Пароль</label>
@@ -29,9 +28,8 @@
           </div>
           <div class="ui secondary inverted red segment js-registration-error" style="display: none"></div>
           <input type="submit" class="btn btn-default" value="Зарегистрироваться">
-          </form>
-        </div>
-        <footer></footer>
-    </div>
-
-    <div class="modal-close" title="Закрыть" data-close="Close" data-dismiss="modal">?</div>
+        </form>
+      </div>
+      <!-- <footer></footer> -->
+</div>
+<div class="modal-close" title="Закрыть" data-close="Close" data-dismiss="modal">?</div>

@@ -6,7 +6,10 @@
     "pure": "~0.5.0",
     "font-awesome": "~4.2.0",
     "font-awesome-animation": "~0.0.5",
-    "css-modal": "~1.2.0"
+    "css-modal": "~1.2.0",
+    "semantic-ui-form": "~1.0.0",
+    "semantic-ui-button": "~1.0.0",
+    "semantic-ui-sass": "*"
   },
   "devDependencies": {}
 }

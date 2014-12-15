@@ -41,8 +41,8 @@ function AuthModule($uhr, $jQuery, $serviceLocator) {
   this.config = $serviceLocator.resolve('config');
   if (this.$context.isBrowser) {
     this.modal = $serviceLocator.resolve('modal');
+    this.modal.addClass('modal--resize');
   //   this._addValidationToLoginForm();
-  //   this._addValidationToRegistrationForm();
   //   this._addValidationToPasswordRecovery();
   }
 }
@@ -134,6 +134,7 @@ AuthModule.prototype.renderRegistration = function() {
 // }
 
 AuthModule.prototype.handleSignup = function(event) {
+  var self = this;
   console.log('----------- handleSignup -----------');
   if(event.isEnding) {
     console.log(event);
@@ -144,7 +145,11 @@ AuthModule.prototype.handleSignup = function(event) {
   if(!this.isGuest()) {
     return void this.$context.redirect('/');
   }
-  return this.modal.show(this.$context.name,'signup');
+  return this.modal.show(this.$context.name,'signup')
+  .then(function(){
+    self._addValidationToRegistrationForm();
+  });
+  // return;
 };
 // AuthModule.prototype.handleGuest = function(event) {
 //   return this._handleDialog(dialogGuest, event);
@@ -276,78 +281,78 @@ AuthModule.prototype.submitSignup = function(event) {
   //     })
   // },
 
-// AuthModule.prototype._addValidationToRegistrationForm = function() {
-//   if(this.$context.isBrowser){
-//     var
-//       messEmailError = 'Неправильный формат',
-//       messLength = util.format('Минимальная длина %d символов.', validPassLength),
-//       messPassConfirm = 'Пароль и подтверждение пароля несовпадают',
-//       messTermsError = 'Для использования сервиса вам необходимо согласится с условиями использования',
-//       messNameError = util.format('Количество символов: %d минимальное, %d максимальное.', validLength, validMaxLength);
-//       // locale=this.getCookieLocale(),
-//       // messTermsError = this.l10n.get(t,'AUTH_FORM_TERMS_ERROR'),
-//       // messEmailError = this.l10n.get(t,'AUTH_FORM_LOGIN_ERROR'),
-//       // messPassConfirm = this.l10n.get(locale,'AUTH_FORM_PASSWORD_CONFIRMATION_ERROR'),
-//       // messLength = util.format(this.l10n.get(locale,'AUTH_FORM_PASSWORD_ERROR'), validPassLength),
-//       // messNameError = util.format(this.l10n.get(locale,'AUTH_FORM_NAME_ERROR'), validLength, validMaxLength);
-//     this.$(jsFormSignUp).form({
-//       name: {
-//         identifier: 'name',
-//         rules: [
-//           {
-//             type: 'length[' + validLength + ']',
-//             prompt: messNameError
-//           },
-//           {
-//             type: 'maxLength[' + validMaxLength + ']',
-//             prompt: messNameError
-//           }
-//         ]
-//       },
-//       email: {
-//         identifier: 'email',
-//         rules: [
-//           {
-//             type: 'email',
-//             prompt: messEmailError
-//           }
-//         ]
-//       },
-//       password: {
-//         identifier: 'password',
-//         rules:[
-//           {
-//             type: 'length[' + validPassLength + ']',
-//             prompt: messLength
-//           }
-//         ]
-//       },
-//       passwordConfirmation: {
-//         identifier: 'password-confirmation',
-//         rules:[
-//           {
-//             type: 'match[password]',
-//             prompt: messPassConfirm
-//           }
-//         ]
-//       },
-//       terms: {
-//         identifier: 'terms',
-//         rules: [
-//           {
-//             type: 'checked',
-//             prompt: messTermsError
-//           }
-//         ]
-//       }
-//     },
-//     {
-//       inline: true,
-//       on: 'blur',
-//       debug: false
-//     });
-//   }
-// };
+AuthModule.prototype._addValidationToRegistrationForm = function() {
+  if(this.$context.isBrowser){
+    var
+      messEmailError = 'Неправильный формат',
+      messLength = util.format('Минимальная длина %d символов.', validPassLength),
+      messPassConfirm = 'Пароль и подтверждение пароля несовпадают',
+      messTermsError = 'Для использования сервиса вам необходимо согласится с условиями использования',
+      messNameError = util.format('Количество символов: %d минимальное, %d максимальное.', validLength, validMaxLength);
+      // locale=this.getCookieLocale(),
+      // messTermsError = this.l10n.get(t,'AUTH_FORM_TERMS_ERROR'),
+      // messEmailError = this.l10n.get(t,'AUTH_FORM_LOGIN_ERROR'),
+      // messPassConfirm = this.l10n.get(locale,'AUTH_FORM_PASSWORD_CONFIRMATION_ERROR'),
+      // messLength = util.format(this.l10n.get(locale,'AUTH_FORM_PASSWORD_ERROR'), validPassLength),
+      // messNameError = util.format(this.l10n.get(locale,'AUTH_FORM_NAME_ERROR'), validLength, validMaxLength);
+    this.$(jsFormSignUp).form({
+      name: {
+        identifier: 'name',
+        rules: [
+          {
+            type: 'length[' + validLength + ']',
+            prompt: messNameError
+          },
+          {
+            type: 'maxLength[' + validMaxLength + ']',
+            prompt: messNameError
+          }
+        ]
+      },
+      email: {
+        identifier: 'email',
+        rules: [
+          {
+            type: 'email',
+            prompt: messEmailError
+          }
+        ]
+      },
+      // terms: {
+      //   identifier: 'terms',
+      //   rules: [
+      //     {
+      //       type: 'checked',
+      //       prompt: messTermsError
+      //     }
+      //   ]
+      // },
+      password: {
+        identifier: 'password',
+        rules:[
+          {
+            type: 'length[' + validPassLength + ']',
+            prompt: messLength
+          }
+        ]
+      },
+      passwordConfirmation: {
+        identifier: 'password-confirmation',
+        rules:[
+          {
+            type: 'match[password]',
+            prompt: messPassConfirm
+          }
+        ]
+      }
+    },
+    {
+      inline: true,
+      on: 'blur',
+      debug: true
+    });
+  }
+};
 
 
 /**

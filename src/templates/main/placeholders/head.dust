@@ -8,6 +8,7 @@
   <link rel="icon" href="favicon.png" type="image/x-icon">
   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
    <!-- build:css static/css/main.css -->
+  <link rel="stylesheet" href="/tmp/vendor/semantic-ui-form/form.css">
   <link rel="stylesheet" href="/tmp/vendor/pure/pure.css" />
   <link rel="stylesheet" href="/tmp/css/main.css" />
   <!-- endbuild -->
@@ -22,6 +23,7 @@
 <!-- catberry -->
 <script src="/bundle.js"></script>
 <!-- build:js static/js/main.js -->
+  <script src="/tmp/vendor/semantic-ui-form/form.min.js"></script>
 <script src="/tmp/js/main.js"></script>
 <!-- endbuild -->
 <!--[if lte IE 9]>
