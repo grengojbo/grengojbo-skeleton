@@ -23,11 +23,11 @@
           <div class="inline field">
             <div class="ui checkbox">
               <input type="checkbox" id="terms" name="terms">
-              <label for="terms">С <a href="/info/terms" target="_blank">соглашением об использовании сервиса konfettin.ru</a> ознакомился и согласен</label>
+              <label for="terms">С <a href="/info/terms" target="_blank">соглашением об использовании сервиса</a> ознакомился и согласен</label>
             </div>
           </div>
           <div class="ui secondary inverted red segment js-registration-error" style="display: none"></div>
-          <input type="submit" class="btn btn-default" value="Зарегистрироваться">
+          <input type="submit" class="pure-button pure-button-primary" value="Зарегистрироваться">
         </form>
       </div>
       <!-- <footer></footer> -->
